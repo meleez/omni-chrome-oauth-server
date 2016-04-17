@@ -2,5 +2,10 @@
     "github" : {
         "client_id": "1649235ae4e380dd699c",
         "client_secret": "a7d4c45e9dc563b07fb5e241f63c5e2f87241828"
+    },
+    "google" : {
+        "client_id": "991745315349-5e2sockl1s1rs5shrfrop0jvo4al7rbp.apps.googleusercontent.com",
+        "client_secret": "P8vJ2Mjt4lK4HfHmz9Sr_ufw",
+        "redirect_uri": "http://127.0.0.1:1337/google"
     }
 }
