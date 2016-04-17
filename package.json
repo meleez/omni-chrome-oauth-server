@@ -1,0 +1,27 @@
+{
+  "name": "omni-chrome-oauth-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meleez/omni-chrome-oauth-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meleez/omni-chrome-oauth-server/issues"
+  },
+  "homepage": "https://github.com/meleez/omni-chrome-oauth-server#readme",
+  "dependencies": {
+    "bluebird": "^3.3.4",
+    "config": "^1.20.1",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "request": "^2.70.0"
+  }
+}
