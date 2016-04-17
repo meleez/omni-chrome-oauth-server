@@ -1,0 +1,21 @@
+{
+  "extends": "airbnb",
+  "root": true,
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "globals": {
+    "__dirname": true,
+    "chrome": true
+  },
+  "rules": {
+    "new-cap": 0,
+    "no-use-before-define": 0,
+    "react/prefer-stateless-function": 0,
+    "react/prop-types": 0,
+    "no-console": 0,
+    "react/jsx-no-bind": 0,
+    "consistent-return": 0
+  }
+}
