@@ -4,13 +4,13 @@
     <title></title>
 </head>
 <body>
-
+Thank you for signing in with <%= type %>
 </body>
 <script>
 
 let extensionID = 'hokomamdpaophpagaonmjhegbdpfpofo';
 
-chrome.runtime.sendMessage(extensionID, { access_token : '<%= access_token %>'}, (response) => {
+chrome.runtime.sendMessage(extensionID, { access_token : '<%= access_token %>', type: '<%= type %>' }, (response) => {
     console.log('succcess', response);
 });
 
