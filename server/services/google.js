@@ -1,10 +1,11 @@
 const Promise = require('bluebird');
 const request = Promise.promisifyAll(require('request'));
 const config = require('config');
-const googleKeys = config.get('github');
+const googleKeys = config.get('google');
 const googleUrl = 'https://www.googleapis.com/oauth2/v4/token';
 
 function getAccessToken(body) {
+  
   return request.postAsync({
     url: googleUrl,
     headers: {
@@ -20,4 +21,12 @@ function getAccessToken(body) {
   }).then((response) => JSON.parse(response.body));
 }
 
-module.exports = getAccessToken;
+function googleService(req, res) {
+  getAccessToken(req.query)
+    .then((body) => {
+      console.log(body);
+      res.render('index', { access_token: body.access_token, type: 'google' });
+    });
+}
+
+module.exports = googleService;
