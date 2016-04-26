@@ -22,8 +22,10 @@ function getAccessToken(body) {
 function githubService(req, res) {
   getAccessToken(req.query)
     .then((body) => {
-      console.log(body);
-      res.render('index', { access_token: body.access_token, type: 'github' });
+      res.render('index', {
+        access_token: body.access_token,
+        type: 'github',
+      });
     });
 }
 

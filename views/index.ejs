@@ -1,28 +1,33 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+  <title></title>
 </head>
+
 <body>
-<% if (access_token) { %>
-Thank you for signing in with <%= type %>
-<% } else { %>
-No access token
-<% } %>
+  <% if (access_token) { %>
+    Thank you for signing in with <%= type %>
+  <% } else { %>
+    No access token
+  <% } %>
 
-</body>
-<script>
+  <script>
+    if ('<%= access_token %>') {
+      // hard code alex's chrome extension ID
+      addAccessToken('hokomamdpaophpagaonmjhegbdpfpofo');
+      // hard code andy's chrome extension ID
+      addAccessToken('gijdlknjgpjglibodopkfkbjcfbjmpnd');
+    }
 
-let extensionID = 'hokomamdpaophpagaonmjhegbdpfpofo';
-
-if ('<%= access_token %>') addAccessToken();
-
-function addAccessToken() {
-    chrome.runtime.sendMessage(extensionID, { access_token : '<%= access_token %>', type: '<%= type %>' }, (response) => {
+    function addAccessToken(extensionID) {
+      chrome.runtime.sendMessage(extensionID, {
+        access_token : '<%= access_token %>',
+        type: '<%= type %>',
+      }, (response) => {
         console.log('succcess', response);
-    });    
-}
+      });
+    }
 
-</script>
+  </script>
+</body>
 
 </html>
