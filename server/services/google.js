@@ -5,7 +5,7 @@ const googleKeys = config.get('google');
 const googleUrl = 'https://www.googleapis.com/oauth2/v4/token';
 
 function getAccessToken(body) {
-  
+  console.log(body);
   return request.postAsync({
     url: googleUrl,
     headers: {
