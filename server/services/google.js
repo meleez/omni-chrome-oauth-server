@@ -24,8 +24,7 @@ function getAccessToken(body) {
 function googleService(req, res) {
   getAccessToken(req.query)
     .then((body) => {
-      console.log(body);
-      res.render('index', { access_token: body.access_token, type: 'google' });
+      res.render('index', { access_token: body.access_token, type: 'google', extension_id: config.get('extensionID') });
     });
 }
 

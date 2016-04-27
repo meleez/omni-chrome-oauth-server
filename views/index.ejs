@@ -13,12 +13,10 @@ No access token
 </body>
 <script>
 
-let extensionID = 'gejlaoaoeoipbakbbadldoddahhbbijf';
-
 if ('<%= access_token %>') addAccessToken();
 
 function addAccessToken() {
-    chrome.runtime.sendMessage(extensionID, { access_token : '<%= access_token %>', type: '<%= type %>' }, (response) => {
+    chrome.runtime.sendMessage('<%= extension_id %>', { access_token : '<%= access_token %>', type: '<%= type %>' }, (response) => {
         console.log('succcess', response);
     });    
 }
